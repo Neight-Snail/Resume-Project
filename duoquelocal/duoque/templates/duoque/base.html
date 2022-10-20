@@ -1,0 +1,10 @@
+{% load static %}
+<html lang="en">
+<head>
+    {% block css_files %}<link rel="stylesheet" href="{% static 'duoque/style.css' %}">{% endblock %}
+    <title>{% block title %}My amazing site{% endblock %}</title>
+</head>
+
+<body>
+    {% block content %}{% endblock %}
+</body>

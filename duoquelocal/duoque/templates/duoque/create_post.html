@@ -1,0 +1,28 @@
+{% extends "duoque/base.html" %}
+{% block title %}
+    Create
+{% endblock %}
+{% block content %}
+<div class = banner>
+    <p>Creating A Post As {{user.username}}</p>    
+    <a href="{% url 'logout' %}">Logout</a>
+    <a href="{% url 'create' %}">Make Post</a>
+    <a href="{% url 'index' %}">Return to Home</a>
+    </div>
+<div class="main">
+    <div class="grid-container">
+{% if post_to_be_edited %}
+<div class="grid-item">
+    <img src="{{MEDIA_URL}}{{post_to_be_edited.clip.url}}" alt="clip" width="250" height="250">
+{% endif %}
+</div>
+<form method="post" enctype="multipart/form-data">{% csrf_token %}
+    <label for="file-upload" class="custom-file-upload">
+        <i class="fa fa-cloud-upload"></i> Custom Upload
+    </label>
+    {{ form.as_p }}
+    <button class="custom-file-upload" type="submit">Create</button>
+</form>
+</div>
+</div>
+{% endblock %}

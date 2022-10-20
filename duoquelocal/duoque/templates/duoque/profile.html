@@ -1,0 +1,25 @@
+{% extends "duoque/base.html" %}
+{% block title %}
+    Profile
+{% endblock %}
+{% block content %}
+<div class = banner>
+<p>{{user.username}}'s Profile</p>    
+<a href="{% url 'logout' %}">Logout</a>
+<a href="{% url 'create' %}">Make Post</a>
+<a href="{% url 'index' %}">Return to Home</a>
+</div>
+<div class="main">
+    <div class="grid-container">
+{% for post in posts %}
+<div class="grid-item">
+    <img src="{{MEDIA_URL}}{{post.clip.url}}" alt="clip" width="250" height="250">
+    {% if user.id == logged_in_user.id %}
+        <a href="{% url 'delete_post' post.id %}">Delete Post</a>
+        <a href="{% url 'edit_post' post.id %}">Edit Post</a>
+    {% endif %}
+</div>
+{% endfor %}
+    </div>
+</div>
+{% endblock %}

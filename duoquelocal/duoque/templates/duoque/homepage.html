@@ -1,0 +1,29 @@
+{% extends "duoque/base.html" %}
+{% load static %}
+{% block title %}
+    Homepage
+{% endblock %}
+{% block content %}
+<div class = banner>
+<p>Hello {{user.username}}</p>
+    <div class = options>
+<a href="{% url 'view_profile' user.username %}">View Profile</a>
+<a href="{% url 'create' %}">Make Post</a>
+<a href="{% url 'logout' %}">Logout</a>
+    </div>
+</div>
+<div class="main">
+    <div class="grid-container">
+{% for post in posts %}
+    <div class="grid-item">
+    <img src="{{MEDIA_URL}}{{post.clip.url}}" alt="clip" width="250" height="250">
+    <p>Votes: {{ post.likes.all.count|add:post.dislikes.all.count }}</p>
+    {% if user.id != post.author.id %}
+        <a href="{% url 'upvote' post.id %}">Upvote</a>
+        <a href="{% url 'downvote' post.id %}">Downvote</a>
+    {% endif %}
+    </div>
+{% endfor %}
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,117 @@
+body  
+{  
+    margin: 0;  
+    padding: 0;   
+} 
+
+.banner {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.banner a {
+    border: 5px solid #333;
+    float: right;
+    display: block;
+    background-color: #be6e78;
+    color: #F6F4F6;
+    text-align: center;
+    padding: 14px 16px;
+    margin-top: 60px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.banner a:hover {
+    background: #ddd;
+    color: black;
+}
+
+.banner p {
+    float: left;
+    display: block;
+    color: #F6F4F6;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 30px;
+}
+
+.main {
+    margin-top: 100px;
+    height: 1500px;
+}
+
+.grid-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    background-color: #201C31;
+    padding: 10px;
+}
+.grid-item {
+    background-color: #736D8E;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.grid-item p {
+    color: #F6F4F6;
+}
+
+.grid-item a{
+    background-color: #be6e78;
+    color: #F6F4F6;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    box-shadow: 5px 5px #333;
+}
+
+html {
+    background-color: #201C31;
+}
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload, button {
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    display: inline-block;
+    padding: 6px 12px;
+    cursor: pointer;
+    color: #F6F4F6;
+    background-color: #be6e78;
+    margin: 50px;
+}
+
+.login{  
+    width: 382px;  
+    overflow: hidden;  
+    margin: auto;    
+    padding: 80px;  
+    background: #736D8E;  
+    border-radius: 15px ;
+    color: #F6F4F6;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+h2{  
+    text-align: center;  
+    color: #277582;  
+    padding: 20px; 
+    font-size: 30px;
+}  
+
+p, .register-button {
+    color: #F6F4F6;
+    text-align: center;
+    padding: 20px;
+}

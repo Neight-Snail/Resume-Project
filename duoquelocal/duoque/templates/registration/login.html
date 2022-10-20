@@ -1,0 +1,15 @@
+{% extends "duoque/base.html" %}
+{% block title %}
+    Login
+{% endblock %}
+{% block content %}
+<h2>Log In</h2>
+<div class="login">
+<form method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit">Log In</button>
+</form>
+</div>
+<p>New to site? <a class ='register-button' href="{% url 'register' %}">Register Now</a></p>
+{% endblock %}
